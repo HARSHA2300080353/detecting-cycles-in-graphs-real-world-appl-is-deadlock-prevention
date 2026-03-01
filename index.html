@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Deadlock Condition Analyzer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+<h1>Deadlock Condition Analyzer</h1>
+<p>Automatic Detection using Process Dependency Graph</p>
+</header>
+
+<section class="card">
+
+<label>Number of Processes</label>
+<input type="number" id="vertices">
+
+<label>Dependencies (u v per line)</label>
+<textarea id="edgesInput" rows="6"
+placeholder="Example:
+1 2
+2 3
+3 1"></textarea>
+
+<button class="btn primary" onclick="analyzeSystem()">
+Analyze System
+</button>
+
+</section>
+
+<section class="graphs">
+
+<div class="card">
+<h3>Original Graph</h3>
+<svg id="originalSVG" width="520" height="380"></svg>
+</div>
+
+<div class="card">
+<h3>Safe Graph</h3>
+<svg id="updatedSVG" width="520" height="380"></svg>
+</div>
+
+</section>
+
+<section class="card result">
+<h3>Detected Condition</h3>
+<div id="status"></div>
+<div id="condition"></div>
+<div id="path"></div>
+</section>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
